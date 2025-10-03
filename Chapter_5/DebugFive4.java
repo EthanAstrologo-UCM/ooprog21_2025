@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class DebugFour4
+public class DebugFive4
 {
     public static void main(String args[])
     {
@@ -44,4 +44,5 @@ public class DebugFour4
         System.out.println("Leaving from " + trip.getDepartureCity());
         System.out.println("Going by " + trip.getMode());
     }
+
 }
