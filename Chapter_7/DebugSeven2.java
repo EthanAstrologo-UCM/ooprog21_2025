@@ -1,4 +1,4 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class DebugSeven2
 {
@@ -46,4 +46,5 @@ public class DebugSeven2
         System.out.println(" -------------------" +
                            "\nThe sum of the integers is " + sum);
     }
+
 }
