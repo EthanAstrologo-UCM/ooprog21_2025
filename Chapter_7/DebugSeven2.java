@@ -1,47 +1,49 @@
-import java.util.Scanner; 
+import java.util.*;
 
 public class DebugSeven2
 {
     public static void main(String[] args)
     {
-        Scanner in = new Scanner(System.in);
         String str;
-        int x;
         int length;
         int start = 0;
         int num;
-        int lastSpace = -1; 
+        int lastSpace = -1;
         int sum = 0;
         String partStr;
 
+        Scanner in = new Scanner(System.in);
+
         System.out.print("Enter a series of integers separated by spaces >> ");
         str = in.nextLine();
+
         length = str.length();
 
-        for(x = 0; x < length; ++x)
+        for(int x = 0; x < length; ++x)
         {
             if(str.charAt(x) == ' ')
             {
                 partStr = str.substring(lastSpace + 1, x);
-                num = Integer.parseInt(partStr);
                 
-                System.out.println("                         " + num);
-
-                sum = sum + num;
+                if (!partStr.isEmpty()) { 
+                    num = Integer.parseInt(partStr);
+                    System.out.println(" " + num);
+                    sum += num;
+                }
+                
                 lastSpace = x;
             }
         }
         
         partStr = str.substring(lastSpace + 1, length);
-        num = Integer.parseInt(partStr);
         
-        System.out.println("                         " + num);
+        if (!partStr.isEmpty()) { 
+            num = Integer.parseInt(partStr);
+            System.out.println(" " + num);
+            sum += num;
+        }
 
-        sum = sum + num; 
-
-        System.out.println("-------------------------");
-        System.out.println("\nThe sum of the integers is " + sum);
-        
-        in.close();
+        System.out.println(" -------------------" +
+                           "\nThe sum of the integers is " + sum);
     }
 }
